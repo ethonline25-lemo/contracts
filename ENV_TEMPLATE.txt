@@ -1,0 +1,343 @@
+# Lighthouse + FVM Integration - Environment Variables Template
+# Copy this file to .env and fill in the actual values after deployment
+# Command: Copy this file content and create a new .env file
+
+# =============================================================================
+# NETWORK CONFIGURATION
+# =============================================================================
+
+# Sepolia Testnet
+SEPOLIA_RPC_URL=https://rpc.sepolia.org
+SEPOLIA_CHAIN_ID=11155111
+SEPOLIA_EXPLORER=https://sepolia.etherscan.io
+
+# Filecoin Calibration Testnet
+CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATION_CHAIN_ID=314159
+CALIBRATION_EXPLORER=https://calibration.filfox.info
+
+# =============================================================================
+# CONTRACT ADDRESSES - SEPOLIA NETWORK
+# =============================================================================
+
+# LighthouseReceipt Contract (Sepolia)
+# Deploy this contract first on Sepolia testnet
+SEPOLIA_LIGHTHOUSE_RECEIPT_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# TrustlessAgentFeedback Contract (Sepolia)
+# Deploy this contract second on Sepolia testnet
+# IMPORTANT: Must be funded with LEMO tokens before use!
+SEPOLIA_TRUSTLESS_AGENT_FEEDBACK_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# AgentRegistry Contract (Sepolia)
+# Deploy this contract third on Sepolia testnet
+SEPOLIA_AGENT_REGISTRY_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# LEMO Token Contract (Sepolia) - ALREADY DEPLOYED
+SEPOLIA_LEMO_TOKEN_ADDRESS=0x14572dA77700c59D2F8D61a3c4B25744D6DcDE8D
+
+# USDC Token Contract (Sepolia)
+# Find the official Sepolia USDC address or deploy a test token
+SEPOLIA_USDC_ADDRESS=0x_REPLACE_WITH_SEPOLIA_USDC_ADDRESS
+
+# =============================================================================
+# CONTRACT ADDRESSES - FILECOIN CALIBRATION NETWORK
+# =============================================================================
+
+# LighthouseReceipt Contract (Calibration)
+# Deploy this contract on Filecoin Calibration testnet
+CALIBRATION_LIGHTHOUSE_RECEIPT_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# FVM Shop Contract (Calibration)
+# Deploy from: https://github.com/ethonline25-lemo/filecoin-shop-example
+CALIBRATION_FVM_SHOP_ADDRESS=0x_REPLACE_WITH_FVM_SHOP_ADDRESS
+
+# Test FIL Token (if using ERC20 wrapper)
+CALIBRATION_TFIL_ADDRESS=0x_REPLACE_IF_USING_ERC20_WRAPPER
+
+# =============================================================================
+# LIGHTHOUSE CONFIGURATION
+# =============================================================================
+
+# Lighthouse API Key
+# Get your API key from: https://files.lighthouse.storage/
+LIGHTHOUSE_API_KEY=YOUR_LIGHTHOUSE_API_KEY_HERE
+
+# Lighthouse API Endpoint (default, usually don't change)
+LIGHTHOUSE_API_ENDPOINT=https://node.lighthouse.storage/api/v0/add
+
+# Lighthouse Gateway URL (default, usually don't change)
+LIGHTHOUSE_GATEWAY_URL=https://gateway.lighthouse.storage/ipfs
+
+# =============================================================================
+# REWARD CONFIGURATION
+# =============================================================================
+
+# Feedback Reward Amount (in LEMO tokens, without decimals)
+# Default: 1,000,000 LEMO
+REWARD_AMOUNT=1000000
+
+# LEMO Token Decimals (default: 18)
+LEMO_DECIMALS=18
+
+# Formatted Reward Display
+REWARD_DISPLAY=1,000,000 LEMO
+
+# =============================================================================
+# WALLET CONFIGURATION (FOR DEPLOYMENT/TESTING)
+# =============================================================================
+
+# Deployer Private Key (KEEP THIS SECRET!)
+# Only needed if deploying contracts programmatically
+# DO NOT COMMIT THIS TO GIT!
+DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY_HERE_NEVER_COMMIT
+
+# Deployer Wallet Address (public, safe to share)
+DEPLOYER_ADDRESS=0x_YOUR_WALLET_ADDRESS
+
+# =============================================================================
+# EXTENSION CONFIGURATION
+# =============================================================================
+
+# Default Network (sepolia or calibration)
+DEFAULT_NETWORK=sepolia
+
+# Enabled Networks (comma-separated)
+ENABLED_NETWORKS=sepolia,calibration
+
+# Show Testnet Warning in UI
+SHOW_TESTNET_WARNING=true
+
+# =============================================================================
+# BACKEND INTEGRATION (Optional)
+# =============================================================================
+
+# Lemo Backend API URL
+BACKEND_API_URL=http://localhost:8000
+
+# Backend API Timeout (ms)
+BACKEND_TIMEOUT=10000
+
+# =============================================================================
+# DEPLOYMENT CHECKLIST
+# =============================================================================
+# 
+# STEP 1: DEPLOY CONTRACTS
+# □ Deploy LighthouseReceipt.sol to Sepolia
+# □ Deploy TrustlessAgentFeedback.sol to Sepolia
+# □ Deploy AgentRegistry.sol to Sepolia
+# □ Deploy LighthouseReceipt.sol to Calibration
+# □ Deploy FVM Shop contract to Calibration (from GitHub)
+#
+# STEP 2: FUND CONTRACTS
+# □ Approve LEMO tokens for TrustlessAgentFeedback contract
+# □ Call fundContract() on TrustlessAgentFeedback
+# □ Verify contract balance: call getLEMOBalance()
+#
+# STEP 3: UPDATE THIS FILE
+# □ Replace all deployment addresses above
+# □ Add your Lighthouse API key
+# □ Save as .env file
+#
+# STEP 4: UPDATE EXTENSION
+# □ Copy addresses to LEMO-extension/src/utils/contractConfig.js
+# □ Run: npm run build (in LEMO-extension folder)
+# □ Reload extension in browser
+#
+# STEP 5: TEST
+# □ Connect wallet in extension
+# □ Click "Buy Now" on a product
+# □ Verify receipt is recorded on-chain
+# □ Submit feedback
+# □ Verify LEMO reward is received
+# □ Check LEMO balance in wallet section
+#
+# =============================================================================
+# SECURITY NOTES
+# =============================================================================
+# 
+# IMPORTANT:
+# - NEVER commit .env file to git (already in .gitignore)
+# - NEVER share private keys
+# - Use test networks for development
+# - Fund contracts with appropriate amounts only
+# - Test thoroughly before mainnet deployment
+# - Keep Lighthouse API key secure
+#
+# =============================================================================
+
+
+# Command: Copy this file content and create a new .env file
+
+# =============================================================================
+# NETWORK CONFIGURATION
+# =============================================================================
+
+# Sepolia Testnet
+SEPOLIA_RPC_URL=https://rpc.sepolia.org
+SEPOLIA_CHAIN_ID=11155111
+SEPOLIA_EXPLORER=https://sepolia.etherscan.io
+
+# Filecoin Calibration Testnet
+CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATION_CHAIN_ID=314159
+CALIBRATION_EXPLORER=https://calibration.filfox.info
+
+# =============================================================================
+# CONTRACT ADDRESSES - SEPOLIA NETWORK
+# =============================================================================
+
+# LighthouseReceipt Contract (Sepolia)
+# Deploy this contract first on Sepolia testnet
+SEPOLIA_LIGHTHOUSE_RECEIPT_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# TrustlessAgentFeedback Contract (Sepolia)
+# Deploy this contract second on Sepolia testnet
+# IMPORTANT: Must be funded with LEMO tokens before use!
+SEPOLIA_TRUSTLESS_AGENT_FEEDBACK_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# AgentRegistry Contract (Sepolia)
+# Deploy this contract third on Sepolia testnet
+SEPOLIA_AGENT_REGISTRY_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# LEMO Token Contract (Sepolia) - ALREADY DEPLOYED
+SEPOLIA_LEMO_TOKEN_ADDRESS=0x14572dA77700c59D2F8D61a3c4B25744D6DcDE8D
+
+# USDC Token Contract (Sepolia)
+# Find the official Sepolia USDC address or deploy a test token
+SEPOLIA_USDC_ADDRESS=0x_REPLACE_WITH_SEPOLIA_USDC_ADDRESS
+
+# =============================================================================
+# CONTRACT ADDRESSES - FILECOIN CALIBRATION NETWORK
+# =============================================================================
+
+# LighthouseReceipt Contract (Calibration)
+# Deploy this contract on Filecoin Calibration testnet
+CALIBRATION_LIGHTHOUSE_RECEIPT_ADDRESS=0x_REPLACE_AFTER_DEPLOYMENT
+
+# FVM Shop Contract (Calibration)
+# Deploy from: https://github.com/ethonline25-lemo/filecoin-shop-example
+CALIBRATION_FVM_SHOP_ADDRESS=0x_REPLACE_WITH_FVM_SHOP_ADDRESS
+
+# Test FIL Token (if using ERC20 wrapper)
+CALIBRATION_TFIL_ADDRESS=0x_REPLACE_IF_USING_ERC20_WRAPPER
+
+# =============================================================================
+# LIGHTHOUSE CONFIGURATION
+# =============================================================================
+
+# Lighthouse API Key
+# Get your API key from: https://files.lighthouse.storage/
+LIGHTHOUSE_API_KEY=YOUR_LIGHTHOUSE_API_KEY_HERE
+
+# Lighthouse API Endpoint (default, usually don't change)
+LIGHTHOUSE_API_ENDPOINT=https://node.lighthouse.storage/api/v0/add
+
+# Lighthouse Gateway URL (default, usually don't change)
+LIGHTHOUSE_GATEWAY_URL=https://gateway.lighthouse.storage/ipfs
+
+# =============================================================================
+# REWARD CONFIGURATION
+# =============================================================================
+
+# Feedback Reward Amount (in LEMO tokens, without decimals)
+# Default: 1,000,000 LEMO
+REWARD_AMOUNT=1000000
+
+# LEMO Token Decimals (default: 18)
+LEMO_DECIMALS=18
+
+# Formatted Reward Display
+REWARD_DISPLAY=1,000,000 LEMO
+
+# =============================================================================
+# WALLET CONFIGURATION (FOR DEPLOYMENT/TESTING)
+# =============================================================================
+
+# Deployer Private Key (KEEP THIS SECRET!)
+# Only needed if deploying contracts programmatically
+# DO NOT COMMIT THIS TO GIT!
+DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY_HERE_NEVER_COMMIT
+
+# Deployer Wallet Address (public, safe to share)
+DEPLOYER_ADDRESS=0x_YOUR_WALLET_ADDRESS
+
+# =============================================================================
+# EXTENSION CONFIGURATION
+# =============================================================================
+
+# Default Network (sepolia or calibration)
+DEFAULT_NETWORK=sepolia
+
+# Enabled Networks (comma-separated)
+ENABLED_NETWORKS=sepolia,calibration
+
+# Show Testnet Warning in UI
+SHOW_TESTNET_WARNING=true
+
+# =============================================================================
+# BACKEND INTEGRATION (Optional)
+# =============================================================================
+
+# Lemo Backend API URL
+BACKEND_API_URL=http://localhost:8000
+
+# Backend API Timeout (ms)
+BACKEND_TIMEOUT=10000
+
+# =============================================================================
+# DEPLOYMENT CHECKLIST
+# =============================================================================
+# 
+# STEP 1: DEPLOY CONTRACTS
+# □ Deploy LighthouseReceipt.sol to Sepolia
+# □ Deploy TrustlessAgentFeedback.sol to Sepolia
+# □ Deploy AgentRegistry.sol to Sepolia
+# □ Deploy LighthouseReceipt.sol to Calibration
+# □ Deploy FVM Shop contract to Calibration (from GitHub)
+#
+# STEP 2: FUND CONTRACTS
+# □ Approve LEMO tokens for TrustlessAgentFeedback contract
+# □ Call fundContract() on TrustlessAgentFeedback
+# □ Verify contract balance: call getLEMOBalance()
+#
+# STEP 3: UPDATE THIS FILE
+# □ Replace all deployment addresses above
+# □ Add your Lighthouse API key
+# □ Save as .env file
+#
+# STEP 4: UPDATE EXTENSION
+# □ Copy addresses to LEMO-extension/src/utils/contractConfig.js
+# □ Run: npm run build (in LEMO-extension folder)
+# □ Reload extension in browser
+#
+# STEP 5: TEST
+# □ Connect wallet in extension
+# □ Click "Buy Now" on a product
+# □ Verify receipt is recorded on-chain
+# □ Submit feedback
+# □ Verify LEMO reward is received
+# □ Check LEMO balance in wallet section
+#
+# =============================================================================
+# SECURITY NOTES
+# =============================================================================
+# 
+# IMPORTANT:
+# - NEVER commit .env file to git (already in .gitignore)
+# - NEVER share private keys
+# - Use test networks for development
+# - Fund contracts with appropriate amounts only
+# - Test thoroughly before mainnet deployment
+# - Keep Lighthouse API key secure
+#
+# =============================================================================
+
+
+
+
+
+
+
+
+

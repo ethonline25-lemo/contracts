@@ -1,0 +1,68 @@
+{
+  "networks": {
+    "sepolia": {
+      "chainId": 11155111,
+      "name": "Sepolia Testnet",
+      "rpcUrl": "https://rpc.sepolia.org",
+      "explorer": "https://sepolia.etherscan.io",
+      "contracts": {
+        "LighthouseReceipt": "0xca17ed5b8bc6c80c69b1451e452cdf26453755b5",
+        "TrustlessAgentFeedback": "0x1c1454258fd663520148c8e13f484557d15202ef",
+        "AgentRegistry": "0x7f3d98f604ea312a95b648d7127b6be9ba2d6c8a",
+        "PaymentProcessor": "0x_REPLACE_AFTER_DEPLOYMENT",
+        "LEMOToken": "0x14572dA77700c59D2F8D61a3c4B25744D6DcDE8D"
+      },
+      "tokens": {
+        "LEMO": {
+          "address": "0x14572dA77700c59D2F8D61a3c4B25744D6DcDE8D",
+          "symbol": "LEMO",
+          "decimals": 18
+        },
+        "USDC": {
+          "address": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+          "symbol": "USDC",
+          "decimals": 6
+        },
+        "PYUSD": {
+          "address": "0xCaC524BcA292aaade2DF8A05cC58F0a65B1B3bB9",
+          "symbol": "PYUSD",
+          "decimals": 6
+        }
+      },
+      "merchantWallet": "0x286bd33A27079f28a4B4351a85Ad7f23A04BDdfC"
+    },
+    "calibration": {
+      "chainId": 314159,
+      "name": "Filecoin Calibration",
+      "rpcUrl": "https://api.calibration.node.glif.io/rpc/v1",
+      "explorer": "https://calibration.filfox.info",
+      "contracts": {
+        "LighthouseReceipt": "0x785c2fba7d753fe80b4afe5746e9e54a5c421e26",
+        "FVMShop": "0xea9d2e308394555b914dfd962e8c97dca2bef73a"
+      },
+      "tokens": {
+        "tFIL": {
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "tFIL",
+          "decimals": 18
+        }
+      }
+    }
+  },
+  "lighthouse": {
+    "apiEndpoint": "https://node.lighthouse.storage/api/v0/add",
+    "gatewayUrl": "https://gateway.lighthouse.storage/ipfs",
+    "apiKey": "YOUR_LIGHTHOUSE_API_KEY_HERE"
+  },
+  "rewards": {
+    "feedbackReward": "1000000",
+    "rewardDecimals": 18,
+    "rewardToken": "LEMO"
+  },
+  "ui": {
+    "defaultNetwork": "sepolia",
+    "enabledNetworks": ["sepolia", "calibration"],
+    "showTestnetWarning": true
+  }
+}
+
